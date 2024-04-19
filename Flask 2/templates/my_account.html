@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/header.css">
+    <title>BASE</title>
+</head>
+<style>
+
+</style>
+<body>
+<header>
+    <div>
+        <div class="topBar">
+            <ul class="barItem">
+                <li><a href="/">Home</a></li>
+                <li><a href="/create_acc">Create Acc</a></li>
+                <li><a href="/deposit_money">Deposit Money</a></li>
+                <li><a href="/transfer"> Transfer Money</a></li>
+                <li><a href="/my_account"> My Account</a></li>
+            </ul>
+        </div>
+{% block body %}
+<h2>My Account</h2>
+<ul>
+    <li>Name: {{ info_type[1] }}, {{ info_type[2] }}</li>
+    <li>Account Number: {{ info_type[8] }}</li>
+    <li>Balance: {{ info_type[11] }}</li>
+</ul>
+{% endblock %}

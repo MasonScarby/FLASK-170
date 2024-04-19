@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/header.css">
+    <title>BASE</title>
+</head>
+<style>
+
+</style>
+<body>
+<header>
+    <div>
+        <div class="topBar">
+            <ul class="barItem">
+                <li><a href="/">Home</a></li>
+                <li><a href="/create_acc">Create Acc</a></li>
+                <li><a href="/deposit_money">Deposit Money</a></li>
+                <li><a href="/transfer"> Transfer Money</a></li>
+                <li><a href="/my_account"> My Account</a></li>
+            </ul>
+        </div>
+{% block body %}
+<body>
+
+    <h3>Transfer</h3>
+    <form action="/transfer" method="POST">
+        <input type="number" name="sender_bank_number" placeholder="Your Account number" class="input_field"> <br>
+        <input type="number" name="receiver_bank_number" placeholder="Reciever Account number" class="input_field"> <br>
+        <input type="number" name="amount" placeholder="Amount $" class="input_field"> <br>
+        <input type="submit" value="Submit" class="input_submit">
+    </form>  
+
+</body>
+</html>
+{% endblock %}
+

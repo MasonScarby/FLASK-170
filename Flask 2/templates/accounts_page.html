@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/header.css">
+    <title>BASE</title>
+</head>
+<style>
+
+</style>
+<body>
+<header>
+    <div>
+        <div class="topBar">
+            <ul class="barItem">
+                <li><a href="/">Home</a></li>
+                <li><a href="/create_acc">Create Acc</a></li>
+                <li><a href="/deposit_money">Deposit Money</a></li>
+                <li><a href="/transfer"> Transfer Money</a></li>
+                <li><a href="/my_account"> My Account</a></li>
+            </ul>
+        </div>
+    {% block body %}
+<div class="body">
+
+    <form action="/accept" method="post">
+        <input type="text" name="accept" placeholder="what acc do you want to accept" class="input_field"> <br>
+        <input type="submit" value="Submit" class="input_submit">
+    </form>
+    <h3>All pending accounts below</h3>
+
+    {% for i in info_type %}
+    <ul>
+        <li> Pending Bank Account ID: {{ i[0] }} </li>
+        <ul>
+            <li>first_name: {{ i[1] }} </li>
+            <li>last: {{ i[2] }} </li>
+            <li>username: {{ i[3] }} </li>
+            <li>SSN: {{ i[4] }} </li>
+            <li>phone number: {{ i[5] }} </li>
+
+        </ul>
+    </ul>
+
+    
+    {% endfor %}
+</div>
+
+{% endblock %}
